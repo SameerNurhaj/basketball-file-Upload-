@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Upload files – Nothing but net</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<link rel="stylesheet" href="style.css">
+<main class="panel" id="stage">
+  <div class="head">
+    <div>
+      <h1>Upload files</h1>
+      <p>Drag and drop, or take the shot.</p>
+    </div>
+    <div class="pill">Uploaded <b id="count">0</b></div>
+  </div>
+
+  <div class="zone" id="zone" role="button" tabindex="0" aria-label="Drop files here or click to choose">
+    <svg class="up" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 17v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2"/></svg>
+    <div class="t1">Drop files here</div>
+    <div class="t2">or take the shot</div>
+
+    <svg class="hoop" id="hoop" viewBox="0 0 128 140" aria-hidden="true">
+      <rect class="board" x="34" y="2" width="60" height="42" rx="1"/>
+      <rect class="board" x="50" y="22" width="28" height="22" rx="1" style="stroke-width:2"/>
+      <rect x="56" y="44" width="16" height="8" fill="var(--orange)"/>
+      <g class="net">
+        <line x1="26" y1="76" x2="46" y2="130"/><line x1="40" y1="79" x2="54" y2="132"/>
+        <line x1="54" y1="81" x2="62" y2="133"/><line x1="64" y1="82" x2="64" y2="133"/>
+        <line x1="74" y1="81" x2="66" y2="133"/><line x1="88" y1="79" x2="74" y2="132"/>
+        <line x1="102" y1="76" x2="82" y2="130"/>
+        <line x1="26" y1="76" x2="54" y2="132"/><line x1="40" y1="79" x2="62" y2="133"/>
+        <line x1="54" y1="81" x2="64" y2="133"/><line x1="64" y1="82" x2="66" y2="133"/>
+        <line x1="74" y1="81" x2="74" y2="132"/><line x1="88" y1="79" x2="82" y2="130"/>
+        <line x1="102" y1="76" x2="74" y2="132"/><line x1="88" y1="79" x2="62" y2="133"/>
+        <line x1="74" y1="81" x2="54" y2="132"/><line x1="64" y1="82" x2="46" y2="130"/>
+        <line x1="54" y1="81" x2="46" y2="130"/>
+        <path d="M31 90 Q64 98 97 90 M37 103 Q64 110 91 103 M44 116 Q64 122 84 116" fill="none" stroke="var(--net)" stroke-width="1.2"/>
+      </g>
+      <ellipse class="rim" cx="64" cy="76" rx="40" ry="7"/>
+    </svg>
+    <div class="plus" id="plus">+1</div>
+  </div>
+
+  <div class="hintdots" id="hintdots"></div>
+  <div class="file" id="pdf" title="Drag me into the hoop">
+    <div class="sheet"><div class="lines"><i></i><i></i><i></i></div><span class="tag">PDF</span></div>
+    <div class="fname" id="fname"></div>
+  </div>
+  <button class="choose" id="choose" type="button">
+    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Select a PDF from your computer
+  </button>
+  <svg class="aim" id="aim"><path id="aimPath" d=""/></svg>
+
+  <div class="toasts" id="toasts"></div>
+  <input type="file" id="picker" accept=".pdf,application/pdf" multiple>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
